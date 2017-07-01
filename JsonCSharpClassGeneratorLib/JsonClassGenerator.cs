@@ -44,9 +44,9 @@ namespace Xamasoft.JsonClassGenerator
         public void GenerateClasses()
         {
             if (CodeWriter == null) CodeWriter = new CSharpCodeWriter();
-            if (ExplicitDeserialization && !(CodeWriter is CSharpCodeWriter)) throw new ArgumentException("Explicit deserialization is obsolete and is only supported by the C# provider.");
+            if (ExplicitDeserialization && !(CodeWriter is CSharpCodeWriter)) throw new ArgumentException("明确反序列化是过时的，是由C #提供商只支持。");
 
-            if (used) throw new InvalidOperationException("This instance of JsonClassGenerator has already been used. Please create a new instance.");
+            if (used) throw new InvalidOperationException("这种情况jsonclassgenerator已经被使用。请创建一个新实例。");
             used = true;
 
 
@@ -70,7 +70,7 @@ namespace Xamasoft.JsonClassGenerator
                 }
                 else
                 {
-                    throw new Exception("Sample JSON must be either a JSON array, or a JSON object.");
+                    throw new Exception("示例JSON必须是一个JSON数组或JSON对象。");
                 }
             }
 

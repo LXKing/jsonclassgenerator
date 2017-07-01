@@ -12,3 +12,6 @@ C:\Users\LXKing\Downloads\jsonclassgenerator-4a0b570f6c44\jsonclassgenerator_4a0
 C:\Users\LXKing\Downloads\jsonclassgenerator-4a0b570f6c44\jsonclassgenerator_4a0b570f6c44\obj\x86\Debug\JsonClassGenerator.csproj.GenerateResource.Cache
 C:\Users\LXKing\Downloads\jsonclassgenerator-4a0b570f6c44\jsonclassgenerator_4a0b570f6c44\obj\x86\Debug\JsonCSharpClassGenerator.exe
 C:\Users\LXKing\Downloads\jsonclassgenerator-4a0b570f6c44\jsonclassgenerator_4a0b570f6c44\obj\x86\Debug\JsonCSharpClassGenerator.pdb
+E:\MyCode\GitHub\jsonclassgenerator\bin\Debug\JsonCSharpClassGenerator.exe.config
+E:\MyCode\GitHub\jsonclassgenerator\obj\x86\Debug\JsonCSharpClassGenerator.exe
+E:\MyCode\GitHub\jsonclassgenerator\obj\x86\Debug\JsonCSharpClassGenerator.pdb

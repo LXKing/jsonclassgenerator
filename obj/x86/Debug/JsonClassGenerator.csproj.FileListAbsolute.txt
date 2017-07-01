@@ -1,0 +1,14 @@
+C:\Users\LXKing\Downloads\jsonclassgenerator-4a0b570f6c44\jsonclassgenerator_4a0b570f6c44\bin\Debug\JsonCSharpClassGenerator.exe.config
+C:\Users\LXKing\Downloads\jsonclassgenerator-4a0b570f6c44\jsonclassgenerator_4a0b570f6c44\bin\Debug\JsonCSharpClassGenerator.exe
+C:\Users\LXKing\Downloads\jsonclassgenerator-4a0b570f6c44\jsonclassgenerator_4a0b570f6c44\bin\Debug\JsonCSharpClassGenerator.pdb
+C:\Users\LXKing\Downloads\jsonclassgenerator-4a0b570f6c44\jsonclassgenerator_4a0b570f6c44\bin\Debug\Newtonsoft.Json.dll
+C:\Users\LXKing\Downloads\jsonclassgenerator-4a0b570f6c44\jsonclassgenerator_4a0b570f6c44\bin\Debug\System.Data.Entity.Design.PluralizationServices.dll
+C:\Users\LXKing\Downloads\jsonclassgenerator-4a0b570f6c44\jsonclassgenerator_4a0b570f6c44\bin\Debug\Xamasoft.BetterLinkLabel.dll
+C:\Users\LXKing\Downloads\jsonclassgenerator-4a0b570f6c44\jsonclassgenerator_4a0b570f6c44\bin\Debug\Xamasoft.JsonClassGenerator.dll
+C:\Users\LXKing\Downloads\jsonclassgenerator-4a0b570f6c44\jsonclassgenerator_4a0b570f6c44\bin\Debug\Xamasoft.JsonClassGenerator.pdb
+C:\Users\LXKing\Downloads\jsonclassgenerator-4a0b570f6c44\jsonclassgenerator_4a0b570f6c44\obj\x86\Debug\JsonClassGenerator.csprojResolveAssemblyReference.cache
+C:\Users\LXKing\Downloads\jsonclassgenerator-4a0b570f6c44\jsonclassgenerator_4a0b570f6c44\obj\x86\Debug\Xamasoft.JsonClassGenerator.UI.frmCSharpClassGeneration.resources
+C:\Users\LXKing\Downloads\jsonclassgenerator-4a0b570f6c44\jsonclassgenerator_4a0b570f6c44\obj\x86\Debug\Xamasoft.JsonClassGenerator.UI.Properties.Resources.resources
+C:\Users\LXKing\Downloads\jsonclassgenerator-4a0b570f6c44\jsonclassgenerator_4a0b570f6c44\obj\x86\Debug\JsonClassGenerator.csproj.GenerateResource.Cache
+C:\Users\LXKing\Downloads\jsonclassgenerator-4a0b570f6c44\jsonclassgenerator_4a0b570f6c44\obj\x86\Debug\JsonCSharpClassGenerator.exe
+C:\Users\LXKing\Downloads\jsonclassgenerator-4a0b570f6c44\jsonclassgenerator_4a0b570f6c44\obj\x86\Debug\JsonCSharpClassGenerator.pdb

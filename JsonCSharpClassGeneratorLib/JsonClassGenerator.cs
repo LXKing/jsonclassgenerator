@@ -17,30 +17,90 @@ namespace Xamasoft.JsonClassGenerator
     public class JsonClassGenerator : IJsonClassGeneratorConfig
     {
 
-
+        /// <summary>
+        /// Json数据
+        /// </summary>
         public string Example { get; set; }
+        /// <summary>
+        /// 输出文件夹
+        /// </summary>
         public string TargetFolder { get; set; }
+        /// <summary>
+        /// 命名空间
+        /// </summary>
         public string Namespace { get; set; }
+        /// <summary>
+        /// 第二命名空间
+        /// </summary>
         public string SecondaryNamespace { get; set; }
+        /// <summary>
+        /// 使用性能 true/领域 false
+        /// </summary>
         public bool UseProperties { get; set; }
+        /// <summary>
+        /// 类的可见性
+        /// </summary>
         public bool InternalVisibility { get; set; }
+        /// <summary>
+        /// 使用显式的反序列化（过时）
+        /// </summary>
         public bool ExplicitDeserialization { get; set; }
+        /// <summary>
+        /// 不生成辅助类
+        /// </summary>
         public bool NoHelperClass { get; set; }
+        /// <summary>
+        /// 主类名
+        /// </summary>
         public string MainClass { get; set; }
+        /// <summary>
+        /// 使用帕斯卡案例
+        /// </summary>
         public bool UsePascalCase { get; set; }
+        /// <summary>
+        /// 使用嵌套类
+        /// </summary>
         public bool UseNestedClasses { get; set; }
+        /// <summary>
+        /// 应用混淆排除属性
+        /// </summary>
         public bool ApplyObfuscationAttributes { get; set; }
+        /// <summary>
+        /// 生成单文件
+        /// </summary>
         public bool SingleFile { get; set; }
+        /// <summary>
+        /// 生成代码类型
+        /// </summary>
         public ICodeWriter CodeWriter { get; set; }
+        /// <summary>
+        /// 输出流
+        /// </summary>
         public TextWriter OutputStream { get; set; }
+        //private TextWriter OutputStream = null;
+        /// <summary>
+        /// 总是使用空值
+        /// </summary>
         public bool AlwaysUseNullableValues { get; set; }
+        /// <summary>
+        /// 生成的文档和数据的例子
+        /// </summary>
         public bool ExamplesInDocumentation { get; set; }
-
+        /// <summary>
+        /// 
+        /// </summary>
         private PluralizationService pluralizationService = PluralizationService.CreateService(new CultureInfo("en-us"));
-
+        /// <summary>
+        /// 
+        /// </summary>
         private bool used = false;
+        /// <summary>
+        /// 
+        /// </summary>
         public bool UseNamespaces { get { return Namespace != null; } }
-
+        /// <summary>
+        /// 
+        /// </summary>
         public void GenerateClasses()
         {
             if (CodeWriter == null) CodeWriter = new CSharpCodeWriter();
@@ -114,7 +174,11 @@ namespace Xamasoft.JsonClassGenerator
             }
 
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="path"></param>
+        /// <param name="types"></param>
         private void WriteClassesToFile(string path, IEnumerable<JsonType> types)
         {
             using (var sw = new StreamWriter(path, false, Encoding.UTF8))
@@ -122,7 +186,11 @@ namespace Xamasoft.JsonClassGenerator
                 WriteClassesToFile(sw, types);
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sw"></param>
+        /// <param name="types"></param>
         private void WriteClassesToFile(TextWriter sw, IEnumerable<JsonType> types)
         {
             var inNamespace = false;
@@ -139,7 +207,11 @@ namespace Xamasoft.JsonClassGenerator
             CodeWriter.WriteFileEnd(this, sw);
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="examples"></param>
+        /// <param name="type"></param>
         private void GenerateClass(JObject[] examples, JsonType type)
         {
             var jsonFields = new Dictionary<string, JsonType>();
@@ -230,7 +302,7 @@ namespace Xamasoft.JsonClassGenerator
                             {
                                 foreach (var item in (JArray)value)
                                 {
-                                    if (!(item is JObject)) throw new NotSupportedException("Arrays of non-objects are not supported yet.");
+                                    if (!(item is JObject)) throw new NotSupportedException("尚未支持非对象数组。");
                                     subexamples.Add((JObject)item);
                                 }
 
@@ -239,7 +311,7 @@ namespace Xamasoft.JsonClassGenerator
                             {
                                 foreach (var item in (JObject)value)
                                 {
-                                    if (!(item.Value is JObject)) throw new NotSupportedException("Arrays of non-objects are not supported yet.");
+                                    if (!(item.Value is JObject)) throw new NotSupportedException("尚未支持非对象数组。");
 
                                     subexamples.Add((JObject)item.Value);
                                 }
@@ -257,10 +329,19 @@ namespace Xamasoft.JsonClassGenerator
             Types.Add(type);
 
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         public IList<JsonType> Types { get; private set; }
+        /// <summary>
+        /// 
+        /// </summary>
         private HashSet<string> Names = new HashSet<string>();
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
         private string CreateUniqueClassName(string name)
         {
             name = ToTitleCase(name);
@@ -276,7 +357,11 @@ namespace Xamasoft.JsonClassGenerator
             Names.Add(finalName);
             return finalName;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="plural"></param>
+        /// <returns></returns>
         private string CreateUniqueClassNameFromPlural(string plural)
         {
             plural = ToTitleCase(plural);
@@ -284,7 +369,11 @@ namespace Xamasoft.JsonClassGenerator
         }
 
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
         internal static string ToTitleCase(string str)
         {
             var sb = new StringBuilder(str.Length);
@@ -306,15 +395,20 @@ namespace Xamasoft.JsonClassGenerator
 
             return sb.ToString();
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         public bool HasSecondaryClasses
         {
             get { return Types.Count > 1; }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         public static readonly string[] FileHeader = new[] { 
-            "Generated by Xamasoft JSON Class Generator", 
-            "http://www.xamasoft.com/json-class-generator"
+            "Generated by LXKing JSON Class Generator",
+            "https://github.com/LXKing",
+            "849237567@qq.com"
         };
     }
 }

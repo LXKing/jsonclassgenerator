@@ -101,20 +101,7 @@ namespace Xamasoft.JsonClassGenerator.UI
 
         private void btnGenerate_Click(object sender, EventArgs e)
         {
-            HideCompletionMessage();
-            //文件保存路径
-            if (edtTargetFolder.Text == string.Empty)
-            {
-                MessageBox.Show(this, "请指定输出目录。", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            //命名空间
-            if (edtNamespace.Text == string.Empty)
-            {
-                MessageBox.Show(this, "请指定命名空间。", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            var gen = Prepare();
+            var gen = Prepare(1);
             if (gen == null) return;
             try
             {
@@ -145,7 +132,7 @@ namespace Xamasoft.JsonClassGenerator.UI
                     !(jsonTextboxTrimmed.StartsWith("{") || jsonTextboxTrimmed.StartsWith("[")))
                     edtJson.Text = jsonClipboard;
             }
-            var gen = Prepare();
+            var gen = Prepare(2);
             if (gen == null) return;
             try
             {
@@ -170,9 +157,26 @@ namespace Xamasoft.JsonClassGenerator.UI
         }
 
 
-        private JsonClassGenerator Prepare()
+        private JsonClassGenerator Prepare(int type)
         {
-            //json数据框
+            HideCompletionMessage();
+            if (type == 1)
+            {
+                //文件保存路径
+                if (edtTargetFolder.Text == string.Empty)
+                {
+                    MessageBox.Show(this, "请指定输出目录。", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return null;
+                }
+            }
+
+            //命名空间
+            if (edtNamespace.Text == string.Empty)
+            {
+                MessageBox.Show(this, "请指定命名空间。", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+            //Json数据
             if (edtJson.Text == string.Empty)
             {
                 MessageBox.Show(this, "Please insert some sample JSON.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -180,7 +184,7 @@ namespace Xamasoft.JsonClassGenerator.UI
                 return null;
             }
 
-            //类名
+            //主类名
             if (edtMainClass.Text == string.Empty)
             {
                 MessageBox.Show(this, "Please specify a main class name.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -188,21 +192,37 @@ namespace Xamasoft.JsonClassGenerator.UI
             }
 
             var gen = new JsonClassGenerator();
+            //Json数据
             gen.Example = edtJson.Text;
+            //类的可见性
             gen.InternalVisibility = radInternal.Checked;
+            //生成代码类型
             gen.CodeWriter = (ICodeWriter)cmbLanguage.SelectedItem;
+            //使用显式的反序列化（过时）
             gen.ExplicitDeserialization = chkExplicitDeserialization.Checked && gen.CodeWriter is CSharpCodeWriter;
+            //命名空间
             gen.Namespace = string.IsNullOrEmpty(edtNamespace.Text) ? null : edtNamespace.Text;
+            //不生成辅助类
             gen.NoHelperClass = chkNoHelper.Checked;
+            //第二命名空间
             gen.SecondaryNamespace = radDifferentNamespace.Checked && !string.IsNullOrEmpty(edtSecondaryNamespace.Text) ? edtSecondaryNamespace.Text : null;
+            //输出文件夹
             gen.TargetFolder = edtTargetFolder.Text;
+            //一代成员：Properties 性能 radProperties  Fields 领域 radFields
             gen.UseProperties = radProperties.Checked;
+            //主类名
             gen.MainClass = edtMainClass.Text;
+            //使用帕斯卡案例
             gen.UsePascalCase = chkPascalCase.Checked;
+            //使用嵌套类
             gen.UseNestedClasses = radNestedClasses.Checked;
+            //应用混淆排除属性
             gen.ApplyObfuscationAttributes = chkApplyObfuscationAttributes.Checked;
+            //生成单文件
             gen.SingleFile = chkSingleFile.Checked;
+            //生成的文档和数据的例子
             gen.ExamplesInDocumentation = chkDocumentationExamples.Checked;
+
             return gen;
         }
 

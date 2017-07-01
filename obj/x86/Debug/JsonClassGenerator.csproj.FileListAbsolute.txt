@@ -15,3 +15,14 @@ C:\Users\LXKing\Downloads\jsonclassgenerator-4a0b570f6c44\jsonclassgenerator_4a0
 E:\MyCode\GitHub\jsonclassgenerator\bin\Debug\JsonCSharpClassGenerator.exe.config
 E:\MyCode\GitHub\jsonclassgenerator\obj\x86\Debug\JsonCSharpClassGenerator.exe
 E:\MyCode\GitHub\jsonclassgenerator\obj\x86\Debug\JsonCSharpClassGenerator.pdb
+E:\MyCode\GitHub\jsonclassgenerator\bin\Debug\JsonCSharpClassGenerator.exe
+E:\MyCode\GitHub\jsonclassgenerator\bin\Debug\JsonCSharpClassGenerator.pdb
+E:\MyCode\GitHub\jsonclassgenerator\bin\Debug\Newtonsoft.Json.dll
+E:\MyCode\GitHub\jsonclassgenerator\bin\Debug\System.Data.Entity.Design.PluralizationServices.dll
+E:\MyCode\GitHub\jsonclassgenerator\bin\Debug\Xamasoft.BetterLinkLabel.dll
+E:\MyCode\GitHub\jsonclassgenerator\bin\Debug\Xamasoft.JsonClassGenerator.dll
+E:\MyCode\GitHub\jsonclassgenerator\bin\Debug\Xamasoft.JsonClassGenerator.pdb
+E:\MyCode\GitHub\jsonclassgenerator\obj\x86\Debug\JsonClassGenerator.csprojResolveAssemblyReference.cache
+E:\MyCode\GitHub\jsonclassgenerator\obj\x86\Debug\Xamasoft.JsonClassGenerator.UI.frmCSharpClassGeneration.resources
+E:\MyCode\GitHub\jsonclassgenerator\obj\x86\Debug\Xamasoft.JsonClassGenerator.UI.Properties.Resources.resources
+E:\MyCode\GitHub\jsonclassgenerator\obj\x86\Debug\JsonClassGenerator.csproj.GenerateResource.Cache

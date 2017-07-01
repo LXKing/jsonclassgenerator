@@ -413,9 +413,9 @@
             this.chkSingleFile.AutoSize = true;
             this.chkSingleFile.Location = new System.Drawing.Point(349, 148);
             this.chkSingleFile.Name = "chkSingleFile";
-            this.chkSingleFile.Size = new System.Drawing.Size(96, 16);
+            this.chkSingleFile.Size = new System.Drawing.Size(84, 16);
             this.chkSingleFile.TabIndex = 13;
-            this.chkSingleFile.Text = "生成一个文件";
+            this.chkSingleFile.Text = "生成单文件";
             this.chkSingleFile.UseVisualStyleBackColor = true;
             // 
             // lblDone
